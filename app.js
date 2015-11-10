@@ -39,11 +39,16 @@ var randomNumber = function() {
 function display() {
   var choice1 = document.getElementById('choice1');
   var choice2 = document.getElementById('choice2');
-  choice1.src = choices[randomNumber()].file;
-  choice2.src = choices[randomNumber()].file;
+  // do {
+  //   var randOne = randomNumber();
+  //   var randTwo = randomNumber();
+    choice1.src = choices[randomNumber()].file;
+    choice2.src = choices[randomNumber()].file;
   file.appendChild(choice1);
   file.appendChild(choice2);
 }
 
 display();
+
+
 

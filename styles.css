@@ -1,0 +1,64 @@
+.flex-container {
+  padding: 20px;
+  margin: 0;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: inline-flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.flex-item {
+  padding: 5px;
+  width: 500px;
+  height: 300px;
+  margin-top: 30px;
+
+  line-height: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 3em;
+  text-align: center;
+
+}
+
+#choices:hover {
+  background-color:red;
+}
+
+#banner {
+  text-align: center;
+  margin-top: 60px;
+}
+
+p {
+  width: 45%;
+  text-align: justify;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 60px;
+}
+/*Button Styles*/
+
+#battlebutton {
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 10px;
+  width: 100px;
+  text-decoration: none;
+}
+
+article button {
+  text-align: center;
+  margin: 0 auto;
+  border: 1px solid black;
+  padding: 10px;
+  width: 100px;
+  background: white;
+}
+
