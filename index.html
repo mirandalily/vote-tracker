@@ -6,25 +6,55 @@
   <link rel = "stylesheet" type = "text/css" href="styles.css">
     <title>vote tracker</title>
 </head>
-
 <body>
 <div id="banner"><img src="img/banner.jpg"></div>
-<p>I'm sure you are fully aware of the genius that is Nicolas Cage. You may have seen some of his movies like Wicker Man or National Treasure 1 and 2 (thank whatever powers that be they made a second one). But wouldn't you know it, the sneaky little bastard has found time to make cameos in lots of other famous films. But which of his cameos is the best cameo? Let's put it to the test in BATTLECAGE!</p>
+<div id="welcometext">
+<p>I'm sure you are fully aware of the genius that is Nicolas Cage. You may have seen some of his movies like Wicker Man or National Treasure 1 and 2 (thank whatever powers that be they made a second one). But wouldn't you know it, the sneaky little bastard has found time to play many other characters, some you may know. But which of his characters is the best character? Let's put it to the test in BATTLECAGE! Click on your favorite character role to vote!</p>
+</div>
 <div id="battlebutton">
   <a href="#battlecage">Let's Battle</a>
 </div>
 <a name="battlecage"></a>
 <div class="flex-container">
   <article class="flex-item" id="choices">
+    <!-- <h1 id="caption1"></h1> -->
     <img id="choice1">
   </article>
   <article class="flex-item" id="choices">
     <img id="choice2">
+    <!-- <h1 id="caption2"></h1> -->
   </article>
-  <article class="flex-item">
-  <button name="NextVote" type="reset">Next Round</button>
-  </article>
+  </div>
+  <div id="pickanic">
+  <p>Pick A Nic!</p>
+  </div>
+<div id="chart">
+<canvas id="vote-chart" width="700" height="300"></canvas>
 </div>
+<div id="bonusvideos">
+  <a href="#bonusvids">Bonus Videos!</a>
+  </div>
+<div id="video">
+<a name="bonusvids"></a>
+  <div id="videos1">
+    <div id="video1">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/tCtYuARcQPg" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="video2">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Ll5xHq84A8E" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </div>
+    <div id="videos2">
+    <div id="video3">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/NhOd0roN-Rg" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="video4">
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/-1GadTfGFvU" frameborder="0" allowfullscreen></iframe>
+    </div>
+    </div>
+  </div>
+</div>
+<script src="Chart.js"></script>
 <script src="app.js"></script>
 </body>
 
