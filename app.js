@@ -90,10 +90,13 @@ var data = {
   datasets: [
       {
           label: "Votes Cast",
-          fillColor: "rgba(220,220,220,0.5)",
-          strokeColor: "rgba(220,220,220,0.8)",
+          fillColor: "#3498db",
+          //"rgba(220,220,220,0.5)",
+          strokeColor: "#34495e",
+          //"rgba(220,220,220,0.8)",
           highlightFill: "rgba(220,220,220,0.75)",
-          highlightStroke: "rgba(220,220,220,1)",
+          highlightStroke: '#7f8c8d',
+          //"rgba(220,220,220,1)",
           data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
         }
       ]
@@ -111,7 +114,7 @@ var chartOptions = {
     scaleShowGridLines : true,
 
     //String - Colour of the grid lines
-    scaleGridLineColor : "rgba(0,0,0,.05)",
+    scaleGridLineColor : "white",
 
     //Number - Width of the grid lines
     scaleGridLineWidth : 1,
