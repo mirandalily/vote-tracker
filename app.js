@@ -44,17 +44,11 @@ var tracker = {
 function display() {
   var choice1 = document.getElementById('choice1');
   var choice2 = document.getElementById('choice2');
-  // var caption1 = document.getElementById('caption1');
-  // var caption2 = document.getElementById('caption2');
-
-
     do {
      tracker.img1 = randomNumber();
      tracker.img2 = randomNumber();
       choice1.src = choices[tracker.img1].file;
       choice2.src = choices[tracker.img2].file;
-      // caption1.innerHTML = choices[choice1].caption;
-      // caption2.innerHTML = choices[choice2].caption;
     } while (tracker.img1 === tracker.img2)
 
     votesChart.update();
