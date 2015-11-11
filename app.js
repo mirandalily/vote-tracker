@@ -35,34 +35,111 @@ var randomNumber = function() {
 
 //Display Images, No Duplicates
 
+var tracker = {
+
+  img1: 0,
+  img2: 0
+}
+
 function display() {
   var choice1 = document.getElementById('choice1');
   var choice2 = document.getElementById('choice2');
   // var caption1 = document.getElementById('caption1');
   // var caption2 = document.getElementById('caption2');
 
-  choice1.src = choices[randomNumber()].file;
-  choice2.src = choices[randomNumber()].file;
 
     do {
-      file.appendChild(choice1);
-      file.appendChild(choice2);
+     tracker.img1 = randomNumber();
+     tracker.img2 = randomNumber();
+      choice1.src = choices[tracker.img1].file;
+      choice2.src = choices[tracker.img2].file;
       // caption1.innerHTML = choices[choice1].caption;
       // caption2.innerHTML = choices[choice2].caption;
-    } while (img1 === img2) {
-      img1.src = choices[randomNumber()].file;
-      img2.src = choices[randomNumber()].file;
-    }
+    } while (tracker.img1 === tracker.img2)
+
+    votesChart.update();
 }
-display();
 
 //Click to add Vote
 
-// var voteCount = function(pickNic) {
-//   choices[pickNic].votes++;
-//   choice1.parentNode.removeChild(choice1);
-//   choice2.parentNode.removeChild(choice2);
-//   display();
-// }
-// choice1.addEventListener('click', voteCount);
-// choice1.addEventListener('click', voteCount);
+var selectionOne = function() {
+  var selection = choices[tracker.img1];
+  selection.votes++;
+  data.datasets[0].data[tracker.img1] += 1;
+  votesChart.datasets[0].bars[tracker.img1].value += 1;
+  console.log(selection.name + " has " + selection.votes + " votes.")
+  display();
+}
+
+var selectionTwo = function() {
+  var selection = choices[tracker.img2];
+  selection.votes++;
+  data.datasets[0].data[tracker.img2] += 1;
+  votesChart.datasets[0].bars[tracker.img2].value += 1;
+  console.log(selection.name + " has " + selection.votes + " votes.")
+  display();
+}
+
+choice1.addEventListener('click', selectionOne);
+choice2.addEventListener('click', selectionTwo);
+
+//Chart
+
+var data = {
+  labels: ["Avatar", "Twilight", "Colbert", "ET", "Neverending Story", "Girl Scout", "Hulk Hogan", "Jesus", "Princess Leia", "John and Yoko", "Abe Lincoln", "Hannah Montana", "Napoleon Dynamite", "Pikachu", "Hermione Granger", "Flo from Progressive"],
+  datasets: [
+      {
+          label: "Votes Cast",
+          fillColor: "rgba(220,220,220,0.5)",
+          strokeColor: "rgba(220,220,220,0.8)",
+          highlightFill: "rgba(220,220,220,0.75)",
+          highlightStroke: "rgba(220,220,220,1)",
+          data: [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+        }
+      ]
+}
+
+
+var context = document.getElementById('vote-chart').getContext('2d');
+
+var chartOptions = {
+
+    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+    scaleBeginAtZero : true,
+
+    //Boolean - Whether grid lines are shown across the chart
+    scaleShowGridLines : true,
+
+    //String - Colour of the grid lines
+    scaleGridLineColor : "rgba(0,0,0,.05)",
+
+    //Number - Width of the grid lines
+    scaleGridLineWidth : 1,
+
+    //Boolean - Whether to show horizontal lines (except X axis)
+    scaleShowHorizontalLines: true,
+
+    //Boolean - Whether to show vertical lines (except Y axis)
+    scaleShowVerticalLines: true,
+
+    //Boolean - If there is a stroke on each bar
+    barShowStroke : true,
+
+    //Number - Pixel width of the bar stroke
+    barStrokeWidth : 2,
+
+    //Number - Spacing between each of the X value sets
+    barValueSpacing : 5,
+
+    //Number - Spacing between data sets within X values
+    barDatasetSpacing : 1,
+
+    //String - A legend template
+    legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+};
+
+var votesChart = new Chart(context).Bar(data, chartOptions);
+
+display();
+
+

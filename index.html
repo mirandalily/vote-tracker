@@ -6,7 +6,6 @@
   <link rel = "stylesheet" type = "text/css" href="styles.css">
     <title>vote tracker</title>
 </head>
-
 <body>
 <div id="banner"><img src="img/banner.jpg"></div>
 <p>I'm sure you are fully aware of the genius that is Nicolas Cage. You may have seen some of his movies like Wicker Man or National Treasure 1 and 2 (thank whatever powers that be they made a second one). But wouldn't you know it, the sneaky little bastard has found time to play many other characters, some you may know. But which of his characters is the best character? Let's put it to the test in BATTLECAGE! Click on your favorite character role to vote!</p>
@@ -23,11 +22,13 @@
     <img id="choice2">
     <!-- <h1 id="caption2"></h1> -->
   </article>
-  <article class="flex-item">
-  <button name="NextVote" type="reset">Next Round</button>
+<article class="flex-item" id="pickanic">
+  <h1>Pick A Nic!</h1>
   </article>
 </div>
-<canvas id="vote-chart" width="600" height="600"></canvas>
+
+<canvas id="vote-chart" width="800" height="400"></canvas>
+<script src="Chart.js"></script>
 <script src="app.js"></script>
 </body>
 
