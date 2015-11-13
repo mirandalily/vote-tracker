@@ -1,6 +1,12 @@
+body {
+    background-image: url("img/background.jpg");
+    background-repeat: repeat repeat;
+    background-attachment: fixed;
+}
+
 .flex-container {
-  padding: 20px;
-  margin: 0;
+  width: 100%;
+  margin-bottom: 30px;
 
   display: -webkit-box;
   display: -moz-box;
@@ -13,52 +19,140 @@
 }
 
 .flex-item {
-  padding: 5px;
-  width: 500px;
+  margin: 0 auto;
+  padding: 20px 5px;
+  width: 350px;
   height: 300px;
   margin-top: 30px;
-
   line-height: 150px;
   color: white;
   font-weight: bold;
   font-size: 3em;
   text-align: center;
+  background: white;
+  border: 5px solid red;
+}
 
+#pickanic {
+  color: black;
+  font-size: 10px;
+  margin-bottom: -40px;
 }
 
 #choices:hover {
-  background-color:red;
+  background-color: #3498db;
 }
 
 #banner {
   text-align: center;
-  margin-top: 60px;
+  margin-top: 5px;
 }
 
-p {
-  width: 45%;
+#welcometext p {
+  width: 90%;
   text-align: justify;
   margin: 0 auto;
-  margin-top: 100px;
-  margin-bottom: 60px;
+  letter-spacing: .07em;
+  padding: 25px;
 }
+
+#welcometext {
+  background: white;
+  border: 5px solid red;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+canvas {
+  margin: 0 auto;
+  display: block;
+  margin-top: 5px;
+  padding-top: 10px;
+}
+
+#chart {
+  background: white;
+  border: 5px solid red;
+  margin: 0 auto;
+  display: block;
+  width: 60%;
+}
+
 /*Button Styles*/
 
 #battlebutton {
   text-align: center;
   margin: 0 auto;
-  border: 1px solid black;
+  border: 5px solid red;
   padding: 10px;
   width: 100px;
   text-decoration: none;
-}
-
-article button {
-  text-align: center;
-  margin: 0 auto;
-  border: 1px solid black;
-  padding: 10px;
-  width: 100px;
   background: white;
+  margin-bottom: 100px;
 }
 
+#battlebutton a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: black;
+  letter-spacing: .1em;
+  font-style: bold;
+}
+
+#pickanic {
+  display: block;
+  background: white;
+  margin: 0 auto;
+  width: 15%;
+  font-size: 12px;
+  border: 5px solid red;
+  text-align: center;
+  margin-top: -15px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+#bonusvideos {
+  display: block;
+  background: white;
+  position:relative;
+  width: 15%;
+  font-size: 12px;
+  border: 5px solid red;
+  text-align: center;
+  margin-top: -120px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  padding: 15px;
+}
+
+#bonusvideos a{
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: black;
+  letter-spacing: .1em;
+  font-style: bold;
+  padding: 10px;
+  margin-right:20px;
+}
+
+#videos1 {
+  display: inline-block;
+  float: left;
+}
+
+#videos2 {
+  display: inline-block;
+  float: right;
+}
+
+#video {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 200px;
+}
